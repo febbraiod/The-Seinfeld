@@ -1,0 +1,9 @@
+ENV["SINATRA_ENV"] ||= "development" #anytime I see ENV["SINATRA"] i don't know why.
+
+require_relative './config/environment'
+require 'sinatra/activerecord/rake'
+
+
+task :console do
+  Pry.start
+end
