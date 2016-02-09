@@ -48,11 +48,32 @@ t.text :synopsis
 Character
 text :name
 
-
-
-
 User
 
 has a username
 has a password
 has an email address
+
+
+Routes needed:
+
+/signup
+
+/signin
+
+/quotes to show all quotes and rankings there of
+
+/quotes/:id shows one quote with picture of character, this is where the upvote can happen maybe?
+
+/quotes/new  adds new quote, must have character...give checkboxes, and the option to add a new one...option for image upload?
+
+/users/:username(slug?) shows all quotes added by that user
+
+/episodes shows all quotes by episode
+
+/episode/:id shows all quotes from one episode
+
+
+
+
+
