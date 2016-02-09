@@ -44,6 +44,14 @@ t.text :title
 Character
 text :name
 
-character_episodes (I know i need this table but not sure about a class for it.(since i am using "has_and_belongs_to_many" right now))
+character_episodes 
+
 char_id
 episode_id
+
+
+
+User
+
+has a username
+has a password

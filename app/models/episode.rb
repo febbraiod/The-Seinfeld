@@ -1,6 +1,6 @@
-class Episode
+class Episode < ActiveRecord::Base
 
-  has_many_and_belongs_to_many :characters
+  has_many :characters, through: :character_episodes
   has_many :quotes, through: :characters
 
 end
