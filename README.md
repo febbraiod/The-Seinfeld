@@ -27,15 +27,18 @@ but they might need to be able to add characters in case it's an obscure charact
 for ref:
 
 Quotes belong to a character
-A quote has one episode
 A character has many quotes
-A character has many episodes
-An episode has many characters
-An episode has many quotes through characters
+Quotes also belong to an episode
+an episode has many quotes
+
+an episode has many characters through quotes
+a char has many episodes through quotes
+
 
 Quotes
 t.text :content
 t.integer :char_id
+t.integer :episode_id
 t.integer :rating?
 
 Episode
@@ -45,10 +48,6 @@ t.text :synopsis
 Character
 text :name
 
-character_episodes 
-
-char_id
-episode_id
 
 
 

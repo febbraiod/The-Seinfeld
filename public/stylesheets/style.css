@@ -1,0 +1,67 @@
+
+
+/* GLOBAL */
+
+body {
+  font-size: 100%;
+}
+
+h1 {
+  font-family: helvetica, arial, sans-serif;
+  color: #e30922;
+  font-size: 160%;
+}
+
+h2 {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 1.5em;
+}
+
+
+h3 {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 1.25em;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+.nav {
+  position: fixed;
+  left: 625px;
+  top: 700px;
+}
+
+.headlines {
+  position: fixed;
+  top: 100px;
+  left: 70px;
+
+}
+
+/* NOT GLOBAL */
+
+#logoback {
+  width: 500px;
+  position: fixed;
+  top: 25px;
+  left: 20px;
+  z-index: -1;
+
+}
+
+#leo_welcome {
+  width: 64%;
+  position: fixed;
+  top: 110px;
+  left: 0px;
+  z-index: -1;
+
+}
+
+#soup_nazi {
+  width: 20%;
+
+}

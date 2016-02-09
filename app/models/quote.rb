@@ -1,6 +1,8 @@
 class Quote < ActiveRecord::Base
 
   belongs_to :character
-  has_one :episode, through: :character
+  belongs_to :episode
+
+  validates_presence_of :character
 
 end
