@@ -53,9 +53,9 @@ a {
 }
 
 #leo_welcome {
-  width: 64%;
+  width: 940px;
   position: fixed;
-  top: 110px;
+  bottom: 0px;
   left: 0px;
   z-index: -1;
 
