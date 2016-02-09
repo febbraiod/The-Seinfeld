@@ -14,3 +14,4 @@ ActiveRecord::Base.establish_connection(
 
 require 'open-uri'
 require_all 'app'
+require_all 'lib'
