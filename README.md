@@ -35,11 +35,12 @@ An episode has many quotes through characters
 
 Quotes
 t.text :content
-t.integer :char_id?
+t.integer :char_id
 t.integer :rating?
 
 Episode
 t.text :title
+t.text :synopsis
 
 Character
 text :name
@@ -55,3 +56,4 @@ User
 
 has a username
 has a password
+has an email address
