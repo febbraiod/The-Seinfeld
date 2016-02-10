@@ -3,8 +3,8 @@ class CreateQuotes < ActiveRecord::Migration
     create_table :quotes do |t|
       t.text :content
       t.integer :rating
-      t.text :character_id
-      t.text :episode_id
+      t.integer :character_id
+      t.integer :episode_id
 
       t.timestamps
     end

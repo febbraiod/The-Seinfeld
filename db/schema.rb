@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20160209170538) do
   create_table "quotes", force: :cascade do |t|
     t.text     "content"
     t.integer  "rating"
-    t.text     "character_id"
-    t.text     "episode_id"
+    t.integer  "character_id"
+    t.integer  "episode_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
