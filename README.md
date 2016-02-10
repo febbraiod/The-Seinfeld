@@ -63,15 +63,19 @@ Routes needed:
 
 /quotes to show all quotes and rankings there of
 
+/quotes/new  adds new quote, must have character...give checkboxes, and the option to add a new one...option for image upload?  Needs check boxes for episodes as well.
+
 /quotes/:id shows one quote with picture of character, this is where the upvote can happen maybe?
 
-/quotes/new  adds new quote, must have character...give checkboxes, and the option to add a new one...option for image upload?
+/quote/:id/update
 
 /users/:username(slug?) shows all quotes added by that user
 
 /episodes shows all quotes by episode
 
 /episode/:id shows all quotes from one episode
+
+#every time a quote appears it needs to link to it's own page for voting.
 
 
 

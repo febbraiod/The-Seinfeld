@@ -1,6 +1,6 @@
 class EpisodeScraper
 
-  EPISODE_URL = ""
+  EPISODE_URL = "http://seinfeld.wikia.com/wiki/List_of_Seinfeld_episodes"
 
   def scrape
 
