@@ -4,7 +4,7 @@ class EpisodesController < ApplicationController
 
   get '/episodes' do
     @quotes = Quote.all
-    #need a way to sort them by episode
+    #need a way to sort them by episode(episode_id)
     erb :'episodes/index'
   end
 

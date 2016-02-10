@@ -4,7 +4,8 @@ class QuotesController < ApplicationController
 #every time a quote appears it needs to link to it's own page for voting.
 
   get '/quotes' do
-    @quotes = Quote.all
+    quotes = Quote.all
+    @quotes = quotes.sort {|x,y| x.rating <=> y.rating}.reverse
     erb :'quotes/index'
   end
 

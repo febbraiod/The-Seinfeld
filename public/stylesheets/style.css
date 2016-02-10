@@ -41,6 +41,22 @@ a {
 
 }
 
+.yada {
+  position: fixed;
+  top: 125px;
+  left: 100px;
+
+}
+
+
+#content {
+  position: fixed;
+  top: 300px;
+  left: 300px;
+
+}
+
+
 /* NOT GLOBAL */
 
 #logoback {
