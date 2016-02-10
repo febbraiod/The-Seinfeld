@@ -1,6 +1,6 @@
 
-class QuotesController < ApplicationContoller
-
+class QuotesController < ApplicationController 
+  
 #every time a quote appears it needs to link to it's own page for voting.
 
   get '/quotes' do

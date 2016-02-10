@@ -1,5 +1,5 @@
 
-class UsersController < ApplicationController
+class UsersController < ApplicationController 
 
 #every time a quote appears it needs to link to it's own page for voting.
 
