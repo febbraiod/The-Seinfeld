@@ -1,1 +1,34 @@
-this is where the owner(user who uploaded) can fix any mistakes
+
+<%=@quote.content%><br>
+-<%=@quote.character.name%>
+
+<br>
+<br>
+
+<form method="post" action="/quotes/<%=@quote.id%>">
+
+  <label for='content'>Quote:</label>
+  <input type='text' name='content' id='content'>
+
+  <br>
+  <br>
+
+  <%@characters.each do |char|%>
+    <input type='checkbox' name='char' value='<%=char.name%>'><%=char.name%>
+  <%end%>
+
+  <br>
+  <br>
+
+  <label for='new_char'>New Character:</label>
+  <input type='text' name='new_char' id='new_char'>
+
+  <br>
+  <br>
+
+  <%@episodes.each do |epi|%>
+    <input type='checkbox' name='episode' value='<%=epi.title%>'><%=epi.title%><br>
+  <%end%>
+
+  <input type='submit' value=supdate'>
+</form>
