@@ -1,11 +1,11 @@
 
 <%=@quote.content%><br>
--<%=@quote.character.name%>
+-<%=@quote.character.name%> in <%=@quote.episode.title%>
 
 <br>
 <br>
 
-<form method="post" action="/quotes/<%=@quote.id%>">
+<form method="post" action="/quotes/<%=@quote.id%>/update">
 
   <label for='content'>Quote:</label>
   <input type='text' name='content' id='content'>
@@ -30,5 +30,5 @@
     <input type='checkbox' name='episode' value='<%=epi.title%>'><%=epi.title%><br>
   <%end%>
 
-  <input type='submit' value=supdate'>
+  <input type='submit' value='update'>
 </form>

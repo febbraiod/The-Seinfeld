@@ -1,7 +1,11 @@
 
 <div id="content">
-<h2><%=@quotes[0].episode.title%></h2><br>
+<h2><%=@quotes[0].episode.title%></h2>
 <% @quotes.each do |quote| %>
-  <p><%=quote.rating%> - <a href="/quotes/<%=quote.id%>">"<%=quote.content%>"</a> - <%=quote.character.name%></p>
+  <p><%=quote.rating%> - <a href="/quotes/<%=quote.id%>"><%=quote.content%></a> - <%=quote.character.name%></p>
 <%end%>
 </div>
+
+<br>
+<br>
+<a href='/quote'>Home</a>

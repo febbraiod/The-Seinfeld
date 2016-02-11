@@ -29,9 +29,24 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/:username/quotes' do #use slug?
-    #get all quotes by that user
-    erb #not sure yet
+  get '/:username/quotes' do
+    if !(user = User.find_by(username: params["username"]))
+      redirect '/error'
+    end
+
+    quotes = Quote.all
+    @quotes = quotes.select {|quote| quote.user_id == user.id}
+    
+    if @quotes[0] == nil
+      redirect '/error'
+    end 
+    
+    erb :'users/show'
+  end
+
+  get '/signout' do
+    session.clear
+    redirect '/'
   end
 
 end

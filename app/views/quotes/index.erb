@@ -5,7 +5,17 @@
 </div>
 
 <div id="content">
+<h5>click on a quote to vote</h5>
 <%@quotes.each do |quote|%>
-  <p><%=quote.rating%> - <a href="/quotes/<%=quote.id%>">"<%=quote.content%>"</a> - <%=quote.character.name%></p>
+  <p><%=quote.rating%> - <a href="/quotes/<%=quote.id%>">"<%=quote.content%>"</a> - <%=quote.character.name%> in <a href='/episodes/<%=quote.episode.id%>'><%=quote.episode.title%></a></p>
 <%end%>
+<br>
+<a href='/episodes'>View quotes by episode</a>
+<br>
+<a href='/quotes/new'>Add a new quote</a>
+<br>
+<a href='/<%=@user.username%>/quotes'>View or edit your quotes</a>
+<br>
+<a href='/signout'>Sign out</a>
+
 </div>

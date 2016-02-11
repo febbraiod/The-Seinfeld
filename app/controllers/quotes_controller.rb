@@ -1,9 +1,10 @@
-
 class QuotesController < ApplicationController 
-  
-#every time a quote appears it needs to link to it's own page for voting.
 
-  get '/quotes' do #add episode link?
+  get '/quotes' do
+    if !session["id"]
+      redirect '/error'
+    end
+    @user = User.find(session["id"]) 
     quotes = Quote.all
     @quotes = quotes.sort {|x,y| x.rating <=> y.rating}.reverse
     erb :'quotes/index'
@@ -17,10 +18,16 @@ class QuotesController < ApplicationController
 
   post '/quotes/new' do
     quote = Quote.new(content: params['content'], rating: 0)
-    quote.character = Character.find_by(name: params['char'])
+    if params['char']
+      quote.character = Character.find_by(name: params['char'])
+    elsif params['new_char']
+      char = Character.find_or_create_by(name: params['new_char'])
+      quote.character = char
+    end
+
     quote.episode = Episode.find_by(title: params['episode'])
     quote.user_id = session[:id]
-    if quote.save #you need to add guards so a quote that already exhists can't be saved
+    if !Quote.find_by(content: params['content']) && quote.save
       redirect "/quotes/#{quote.id}"
     else
       redirect "/error"
@@ -28,18 +35,39 @@ class QuotesController < ApplicationController
   end
 
   get '/quotes/:id' do
-    @quote = Quote.find(params[:id])  # find a way to get an image of the character in here
+    @quote = Quote.find(params[:id])
     erb :'quotes/show'
   end
 
-  get "/quotes/:id/update" do # add protection that says the creator of this quote is the one who can edit it.
+  post '/quotes/:id' do
+    @quote = Quote.find(params[:id])
+
+    if params['upvote'] == 'on'
+      @quote.rating += 1
+      @quote.save
+    end
+
+    if params['downvote'] == 'on'
+      @quote.rating -= 1
+      @quote.save
+    end
+
+    redirect '/quotes'
+  end
+
+  get "/quotes/:id/update" do
     @quote = Quote.find(params["id"].to_i)
+
+    if @quote.user_id != session[:id]
+      redirect '/error'
+    end
+
     @characters = Character.all
     @episodes = Episode.all
     erb :'quotes/update'
   end
 
-  post "/quotes/:id" do #why does patch never work for me?
+  post "/quotes/:id/update" do #why does patch never work for me?
     quote = Quote.find(params["id"].to_i)
 
     if params["content"]

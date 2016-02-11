@@ -1,3 +1,18 @@
-<%=@quote.content%>
+<a href='/quotes'>Home</a><br><br>
 
-<!--this is where the upvote can happen maybe?-->
+
+<%=@quote.content%> <br>
+- <%=@quote.character.name%> in <%=@quote.episode.title%>
+
+<br>
+<br>
+
+<form method='post' action='/quotes/<%=@quote.id%>'>
+
+<input type='checkbox' name='upvote'>upvote<br>
+<input type='checkbox' name='downvote'>downvote<br>
+<br>
+<input type='submit' value='vote'>
+</form>
+
+<img src='/images/<%=@quote.character.name.downcase%>.png'>
