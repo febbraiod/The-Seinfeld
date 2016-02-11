@@ -1,6 +1,30 @@
-/quotes/new  
+ 
 
+<form method='post' action='/quotes/new'>
 
-adds new quote(must have character)...give checkboxes, and the option to add a new one... Needs check boxes for episodes as well.
+<label for='content'>Quote:</label>
+<input type='text' name='content' id='content'>
 
-option for image upload? 
+<br>
+<br>
+
+<%@characters.each do |char|%>
+  <input type='checkbox' name='char' value='<%=char.name%>'><%=char.name%>
+<%end%>
+
+<br>
+<br>
+
+<label for='new_char'>New Character:</label>
+<input type='text' name='new_char' id='new_char'>
+
+<br>
+<br>
+
+<%@episodes.each do |epi|%>
+  <input type='checkbox' name='episode' value='<%=epi.title%>'><%=epi.title%><br>
+<%end%>
+
+<input type='submit' value='create'>
+
+</form>

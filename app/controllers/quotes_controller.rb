@@ -10,12 +10,21 @@ class QuotesController < ApplicationController
   end
 
   get '/quotes/new' do
+    @episodes = Episode.all
+    @characters = Character.all
     erb :'quotes/new'
   end
 
-  post 'quotes/new' do
-    #create quote
-    #redirect to quote page
+  post '/quotes/new' do
+    quote = Quote.new(content: params['content'])
+    quote.character = Character.find_by(name: params['char'])
+    quote.episode = Episode.find_by(title: params['episode'])
+    quote.user_id = session[:id]
+    if quote.save == false
+      redirect '/error'
+    else
+      redirect '/quotes' #change to the quote :id page
+    end
   end
 
   get '/quotes/:id' do
