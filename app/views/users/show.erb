@@ -1,9 +1,10 @@
 
-<div id="content">
+<div id = "user_quotes">
 <h2><%=@quotes[0].user.username%></h2><br>
 <% @quotes.each do |quote| %>
   <p><%=quote.rating%> - <a href="/quotes/<%=quote.id%>">"<%=quote.content%>"</a> - <%=quote.character.name%></p> <form action="/quotes/<%=quote.id%>/update"><input type="submit" value="Edit"></form>
 <%end%>
-</div>
+
 <br>
 <a href='/quotes'>Home</a>
+</div>

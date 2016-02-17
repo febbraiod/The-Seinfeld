@@ -10,9 +10,9 @@
 <% idx = 0 %>
 <% @quotes.each do |quote| %>
   <% if quote.episode_id > idx %>
-    <br>
-    <h2><%=quote.episode.title%></h2><br>
-    <% idx += 1 %>
+      <br>
+      <h2><%=quote.episode.title%></h2><br>
+      <% idx += 1 %>
   <% end %>
   <p><%=quote.rating%> - <a href="/quotes/<%=quote.id%>">"<%=quote.content%>"</a> - <%=quote.character.name%></p>
 <%end%>

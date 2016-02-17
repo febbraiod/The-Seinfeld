@@ -49,15 +49,22 @@ a {
 }
 
 
-#content {
-  position: fixed;
-  top: 300px;
-  left: 300px;
-
-}
 
 
 /* NOT GLOBAL */
+
+#user_quotes {
+  width: 66%;
+
+}
+
+#content {
+  position: relative;
+  top: 300px;
+  left: 300px;
+  z-index: -2;
+  width: 65%;
+}
 
 #logoback {
   width: 500px;
