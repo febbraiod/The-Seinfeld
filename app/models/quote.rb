@@ -6,4 +6,5 @@ class Quote < ActiveRecord::Base
 
   validates_presence_of :content, :character, :episode
 
+
 end

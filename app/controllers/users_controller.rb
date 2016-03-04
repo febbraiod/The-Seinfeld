@@ -1,4 +1,3 @@
-
 class UsersController < ApplicationController 
 
   get '/signup' do
@@ -11,6 +10,7 @@ class UsersController < ApplicationController
       session[:id] = user.id
       redirect '/quotes'
     else
+      #flash[:message] = "Username already exists" i think i need gem for this.
       redirect '/error'
     end
   end
